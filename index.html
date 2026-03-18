@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Juegos Gratis Now</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>🎮 Juegos Gratis Now</h1>
+      <p>Encuentra juegos gratis y promociones legales para PC.</p>
+    </header>
+
+    <main class="container">
+      <section class="controls">
+        <input id="searchInput" type="search" placeholder="Buscar juego..." />
+        <select id="platformFilter">
+          <option value="all">Todas las plataformas</option>
+          <option value="pc">PC</option>
+          <option value="steam">Steam</option>
+          <option value="epic-games-store">Epic Games</option>
+          <option value="itchio">Itch.io</option>
+          <option value="gog">GOG</option>
+        </select>
+        <button id="refreshBtn">Actualizar</button>
+      </section>
+
+      <section>
+        <h2>🔥 Giveaways activos</h2>
+        <div id="giveaways" class="grid"></div>
+      </section>
+
+      <section>
+        <h2>🆓 Juegos free-to-play</h2>
+        <div id="f2p" class="grid"></div>
+      </section>
+    </main>
+
+    <template id="cardTemplate">
+      <article class="card">
+        <img class="thumb" alt="" loading="lazy" />
+        <div class="card-content">
+          <h3 class="title"></h3>
+          <p class="meta"></p>
+          <p class="desc"></p>
+          <a class="link" target="_blank" rel="noopener">Ver juego</a>
+        </div>
+      </article>
+    </template>
+
+    <footer>
+      <small>
+        Datos de APIs públicas: GamerPower y FreeToGame. Solo contenido legal.
+      </small>
+    </footer>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>

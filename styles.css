@@ -1,0 +1,110 @@
+:root {
+  --bg: #0b1020;
+  --surface: #111a33;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #38bdf8;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(180deg, #050914, var(--bg));
+  color: var(--text);
+}
+
+.topbar {
+  padding: 1.2rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background: rgba(0,0,0,.2);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(8px);
+  z-index: 20;
+}
+.topbar h1 { margin: 0 0 .2rem; font-size: 1.35rem; }
+.topbar p { margin: 0; color: var(--muted); }
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.controls {
+  display: grid;
+  gap: .6rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 1rem;
+}
+
+input, select, button {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0c1429;
+  color: var(--text);
+  border-radius: .75rem;
+  padding: .75rem .9rem;
+  font-size: 1rem;
+}
+button {
+  background: #0ea5e9;
+  color: #04101d;
+  border: none;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  gap: .8rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 1.2rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+.thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #0b1224;
+}
+.card-content { padding: .8rem; }
+.title { margin: 0 0 .25rem; font-size: 1rem; }
+.meta { margin: 0 0 .45rem; color: var(--accent); font-size: .9rem; }
+.desc { margin: 0 0 .7rem; color: var(--muted); font-size: .92rem; }
+.link {
+  display: inline-block;
+  color: white;
+  background: #0284c7;
+  text-decoration: none;
+  padding: .5rem .7rem;
+  border-radius: .6rem;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 1rem;
+}
+
+@media (min-width: 700px) {
+  .controls {
+    grid-template-columns: 1fr 220px 140px;
+    align-items: center;
+  }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
